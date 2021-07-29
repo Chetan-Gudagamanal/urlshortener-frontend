@@ -12,7 +12,7 @@ export default function UrlGeneratePage({setStatus}) {
     //Check weather user is authorized or not
     useEffect(()=>{
         const checkAuthorized=async()=>{
-            const url="http://localhost:3001/check_authorized"
+            const url="https://url-shortener-backend-server.herokuapp.com/check_authorized"
             const rawData=await fetch(url,{
                 method:"GET",
                 headers: {
