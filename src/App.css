@@ -2,37 +2,135 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 10vh;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.page-title{
+  font-size: 1.5em;
+  min-height: 10vh;
+  padding: 0.4em;
+}
+.login_text{
+  font-size: large;
+  font-weight: bolder;
+}
+.header-class {
+  background-color: #282c34;
+  /* min-height: 15vh; */
+  /* display: flex;
+  flex-direction: column; */
+  align-items: center;
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: 0%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section-class{
+  background-image: linear-gradient(90deg,rgb(236, 204, 99),rgb(228, 218, 247));
+  min-height: 90vh;
+}
+
+.url_shortener_title{
+  font-size: large;
+  font-weight: bolder;
+}
+
+.MyForm{
+  
+  /* background: #0e101c; */
+  background: #d4def8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: white;
+  /* padding: 0 20px 50px; */
+  padding: 2em;
+
+}
+select,
+input {
+display: block;
+box-sizing: border-box;
+width: 100%;
+border-radius: 4px;
+border: 1px solid white;
+padding: 10px 15px;
+margin-bottom: 15px;
+font-size: 14px;
+}
+
+input[type="submit"],
+.button {
+  background: #8a1c44;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  display: block;
+  appearance: none;
+  border-radius: 4px;
+  width: 100%;
+}
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input[type="submit"]:hover {
+  background: #bf1650;
+}
+
+
+
+.route_button{
+  background: #11305e;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  /* margin-top: 20px; */
+  padding: 5px;
+  font-size: 0.8em;
+  font-weight: 200;
+  /* letter-spacing: 1px; */
+  display: block;
+  appearance: none;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.forgot_pwd_btn{
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+.route_button:hover{
+  background: #194280;
+}
+.route_button:active{
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+.status_text{
+  color:#282c34;
+  padding: 1em;
+  
+}
+
+test{
+  color:#918d89
 }
