@@ -37,7 +37,7 @@ export default function Register({setStatus}) {
             let jsonData=await rawData.json();
             // console.log(jsonData)
             if(jsonData._id){
-                alert("created successfully")
+                alert("Created successfully, Click on ok to proceed to next step")
                 // setStatus("User created successfully, You can now Login with your credentials")
                 setStatus("We have sent an verification link to your email, kindly verify to continue.(This link will be valid for only 10 minutes, If not found, kindly check in spam folder also)")
                 history.push("/status")
