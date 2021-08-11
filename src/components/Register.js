@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function Register({setStatus}) {
     const history=useHistory()
+    const [loadingStatus,setLoadingStatus]=useState(false)
     const validationSchema = Yup.object().shape({
         firstName: Yup.string(),
         lastName: Yup.string(),
@@ -24,6 +26,7 @@ export default function Register({setStatus}) {
       } = useForm({ resolver: yupResolver(validationSchema) });
     
       const onSubmit = (data) => {
+        setLoadingStatus(true)
         // console.log(data);
         const registerUser=async()=>{
             const url="https://url-shortener-backend-server.herokuapp.com/register"
@@ -37,11 +40,13 @@ export default function Register({setStatus}) {
             let jsonData=await rawData.json();
             // console.log(jsonData)
             if(jsonData._id){
+                setLoadingStatus(false)
                 alert("Created successfully, Click on ok to proceed to next step")
                 // setStatus("User created successfully, You can now Login with your credentials")
                 setStatus("We have sent an verification link to your email, kindly verify to continue.(This link will be valid for only 10 minutes, If not found, kindly check in spam folder also)")
                 history.push("/status")
             } else{
+                setLoadingStatus(false)
                 alert(jsonData)
             }
         }
@@ -92,8 +97,11 @@ export default function Register({setStatus}) {
                         </span>
                         )}
                         <br/>
-
-                        <input type="submit" />
+                        
+                        {!loadingStatus?
+                        <input type="submit" />:
+                        <CircularProgress disableShrink />
+                        }
                         <br/>
                         <div className="text-center">
                             <button className="route_button" onClick={()=>{history.push("/")}}>Go to Login Page</button>

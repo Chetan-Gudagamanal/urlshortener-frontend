@@ -5,9 +5,12 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import logo from "../url-shortener.png"
 import { auto } from "@popperjs/core";
+import { useState } from "react";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function LoginPage({setStatus}) {
     const history=useHistory()
+    const [loadingStatus,setLoadingStatus]=useState(false)
     const validationSchema = Yup.object().shape({
         userEmail: Yup.string().email(),
         password: Yup.string()
@@ -20,6 +23,7 @@ export default function LoginPage({setStatus}) {
       } = useForm({ resolver: yupResolver(validationSchema) });
     
       const onSubmit = (data) => {
+        setLoadingStatus(true)
         // console.log(data);
         const loginUser=async()=>{
             const url="https://url-shortener-backend-server.herokuapp.com/login"
@@ -36,15 +40,17 @@ export default function LoginPage({setStatus}) {
                     // setStatus("Login Successful")
                     console.log(res)
                     localStorage.setItem("x-auth-token", res)
-                    
+                    setLoadingStatus(false)
                     history.push("/homepage")
                 })
             }else{
                 let jsonData=await rawData.json()
                 console.log(jsonData)
                 if(jsonData=="Incompleate Registration"){
+                    setLoadingStatus(false)
                     alert("Your previous registration is not completed since Email is not verified, We suggest you to register/create an account again")
                 }else{
+                    setLoadingStatus(false)
                     alert("Invalid Credentials")
                 }
             }
@@ -80,8 +86,11 @@ export default function LoginPage({setStatus}) {
                         <span style={{ color: "crimson" }}> {errors.password.message} </span>
                         )}
                         <br/>
-
-                        <input type="submit" />
+                        
+                        {!loadingStatus?
+                        <input type="submit"/>:
+                        <CircularProgress disableShrink />
+                        }
                         <br/>
                         <div className="text-center">
                             <button className="route_button forgot_pwd_btn" onClick={()=>{history.push("/forgotPassword")}}>Forgot Password?</button>
