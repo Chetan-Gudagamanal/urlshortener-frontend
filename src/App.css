@@ -14,10 +14,15 @@
   font-size: 1.5em;
   min-height: 10vh;
   padding: 0.4em;
+  color: antiquewhite;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arimo:ital@1&display=swap');
 .login_text{
-  font-size: large;
+  font-size: 1.5em;
   font-weight: bolder;
+  font-family: 'Archivo Black', sans-serif;
+  color: #424955;
 }
 .header-class {
   background-color: #282c34;
@@ -36,9 +41,12 @@
   min-height: 90vh;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
 .url_shortener_title{
   font-size: large;
   font-weight: bolder;
+  color: rgb(119, 0, 255);
+  font-family: 'Arimo', sans-serif;
 }
 
 .MyForm{
