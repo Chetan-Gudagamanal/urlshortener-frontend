@@ -43,7 +43,7 @@ export default function Register({setStatus}) {
                 setLoadingStatus(false)
                 alert("Created successfully, Click on ok to proceed to next step")
                 // setStatus("User created successfully, You can now Login with your credentials")
-                setStatus("We have sent an verification link to your email, kindly verify to continue.(This link will be valid for only 10 minutes, If not found, kindly check in spam folder also)")
+                setStatus("We have sent an verification link to your email, kindly verify to continue.(This link will be valid for only 20 minutes, If not found, kindly check in spam folder also) NOTE: At heavy input loads it might take max upto 5 minutes to receive email, we are working on speeding it up")
                 history.push("/status")
             } else{
                 setLoadingStatus(false)
