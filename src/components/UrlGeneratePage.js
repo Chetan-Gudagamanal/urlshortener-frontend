@@ -82,7 +82,8 @@ export default function UrlGeneratePage({setStatus}) {
         <div className="row justify-content-center">
             <div className="col-xl-10 col-lg-12 col-md-9">
                 <br/>
-                <p className="url_shortener_title">Hi.. Let me know if you want to shorten any long URL!!!</p>
+                <p className="url_shortener_title">Generate short URL!!!</p>
+                
                 <div className="card o-hidden border-0 shadow-lg my-5">
                     <form onSubmit={handleSubmit(onSubmit)} className="MyForm">
                         <br/>
@@ -91,14 +92,26 @@ export default function UrlGeneratePage({setStatus}) {
                         <span style={{ color: "crimson" }}> {errors.longUrl.message} </span>
                         )}
                         <br />
+                        
 
                         <input type="submit" value="Generate Short URL"/>
                         <br/> 
+                        {shortUrlStatus.length?
+                        (
+                            <>
+                                <p style={{color:'GrayText'}}>Use the Short url generated below.</p><br/>
+                                <a href={shortUrlStatus} target="_blank">{shortUrlStatus}</a>
+                            </>
+                        ):
+                            <></>
+                        }
                     </form>
+                    
+                    
                 </div>
-                {console.log(shortUrlStatus)}
+                {/* {console.log(shortUrlStatus)}
                 <p>Once Short link is generated, it will be shown below.</p><br/>
-                <a href={shortUrlStatus} target="_blank">{shortUrlStatus}</a>
+                <a href={shortUrlStatus} target="_blank">{shortUrlStatus}</a> */}
             </div>
         </div>
     </div>
