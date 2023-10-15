@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
-import { url } from "../constants"
+import { backend_url } from "../constants"
 
 export default function GetShortUrl({setStatus}){
     const history=useHistory()
@@ -8,7 +8,7 @@ export default function GetShortUrl({setStatus}){
     useEffect(()=>{
         const varifyToken=async()=>{
             console.log(shortUrlToken)
-            const url=`${url}/short/${shortUrlToken}`
+            const url=`${backend_url}/short/${shortUrlToken}`
             const rawData=await fetch(url,{
                 method:"GET"
             })

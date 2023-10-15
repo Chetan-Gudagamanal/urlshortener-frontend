@@ -7,7 +7,7 @@ import logo from "../url-shortener.png"
 import { auto } from "@popperjs/core";
 import { useState } from "react";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { url } from "../constants";
+import { backend_url } from "../constants";
 
 export default function LoginPage({setStatus}) {
     const history=useHistory()
@@ -27,7 +27,7 @@ export default function LoginPage({setStatus}) {
         setLoadingStatus(true)
         // console.log(data);
         const loginUser=async()=>{
-            const url=`${url}/login`
+            const url=`${backend_url}/login`
             const rawData=await fetch(url,{
                 method:"POST",
                 headers: {

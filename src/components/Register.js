@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { url } from "../constants";
+import { backend_url } from "../constants";
 
 export default function Register({setStatus}) {
     const history=useHistory()
@@ -30,7 +30,7 @@ export default function Register({setStatus}) {
         setLoadingStatus(true)
         // console.log(data);
         const registerUser=async()=>{
-            const url=`${url}/register`
+            const url=`${backend_url}/register`
             const rawData=await fetch(url,{
                 method:"POST",
                 headers: {

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useHistory } from "react-router-dom"
-import { url } from "../constants"
+import { backend_url } from "../constants"
 
 export default function ResetPasswordPage({useParams,setStatus}){
     const {id,token}=useParams()
@@ -9,7 +9,7 @@ export default function ResetPasswordPage({useParams,setStatus}){
     useEffect(()=>{
         // console.log(data);
         const varifyToken=async()=>{
-            const url=`${url}/reset_password/${id}/${token}`
+            const url=`${backend_url}/reset_password/${id}/${token}`
             const rawData=await fetch(url,{
                 method:"POST",
                 headers: {
