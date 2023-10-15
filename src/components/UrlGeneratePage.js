@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import { url, url } from "../constants";
+import { url } from "../constants";
 
 export default function UrlGeneratePage({setStatus}) {
     const [shortUrlStatus, setShortUrlStatus]=useState(``)
