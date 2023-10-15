@@ -2,12 +2,13 @@ import { Container } from "@material-ui/core";
 import { useRef, useEffect,useState } from 'react'
 
 import {Chart} from 'react-chartjs-2';
+import { url } from "../constants";
 
 export default function MonthReport(){
     const [monthData,setMonthData]=useState([])
     useEffect(()=>{
         const getMonthReport=async()=>{
-            const url=`https://url-shortener-backend-server.herokuapp.com/monthReport`
+            const url=`${url}/monthReport`
             const rawData=await fetch(url,{
                 method:"GET"
             })

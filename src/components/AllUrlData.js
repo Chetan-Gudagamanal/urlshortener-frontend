@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import DisplayAllUrls from "./DisplayAllUrls"
+import { url } from "../constants"
 
 export default function AllUrlData(){
     const [urlData,setUrlData]=useState([])
@@ -11,7 +12,7 @@ export default function AllUrlData(){
     //Check weather user is authorized or not And then fetch data
     useEffect(()=>{
         const checkAuthorized=async()=>{
-            const url="https://url-shortener-backend-server.herokuapp.com/check_authorized"
+            const url=`${url}/check_authorized`
             const rawData=await fetch(url,{
                 method:"GET",
                 headers: {
@@ -33,7 +34,7 @@ export default function AllUrlData(){
         checkAuthorized()
     },[])
     async function fetchAllUrlData(){
-        fetch("https://url-shortener-backend-server.herokuapp.com/allShortUrls", {
+        fetch(`${url}/allShortUrls`, {
           method: "GET",
         })
         .then((res) => res.json())

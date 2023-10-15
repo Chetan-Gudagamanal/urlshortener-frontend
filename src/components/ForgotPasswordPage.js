@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
+import { url } from "../constants";
 
 export default function ForgotPasswordPage({setStatus}) {
     const history=useHistory()
@@ -19,7 +20,7 @@ export default function ForgotPasswordPage({setStatus}) {
       const onSubmit = (data) => {
         console.log(data);
         const getResetLink=async()=>{
-            const url="https://url-shortener-backend-server.herokuapp.com/forgot_password"
+            const url=`${url}/forgot_password`
             const rawData=await fetch(url,{
                 method:"POST",
                 headers: {

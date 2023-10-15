@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory, useParams } from "react-router-dom";
+import { url } from "../constants";
 
 export default function ChangePasswordPage({setStatus}) {
     const history=useHistory()
@@ -24,7 +25,7 @@ export default function ChangePasswordPage({setStatus}) {
       const onSubmit = (data) => {
         console.log(data);
         const changePassword=async()=>{
-            const url=`https://url-shortener-backend-server.herokuapp.com/change_password/${id}/${token}`
+            const url=`${url}/change_password/${id}/${token}`
             const rawData=await fetch(url,{
                 method:"PATCH",
                 headers: {

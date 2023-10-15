@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
+import { url, url } from "../constants";
 
 export default function UrlGeneratePage({setStatus}) {
     const [shortUrlStatus, setShortUrlStatus]=useState(``)
@@ -12,7 +13,7 @@ export default function UrlGeneratePage({setStatus}) {
     //Check weather user is authorized or not
     useEffect(()=>{
         const checkAuthorized=async()=>{
-            const url="https://url-shortener-backend-server.herokuapp.com/check_authorized"
+            const url=`${url}/check_authorized`
             const rawData=await fetch(url,{
                 method:"GET",
                 headers: {
@@ -45,7 +46,7 @@ export default function UrlGeneratePage({setStatus}) {
       const onSubmit = (data) => {
         console.log(data);
         const getShortUrl=async()=>{
-            const url="https://url-shortener-backend-server.herokuapp.com/url_shortener"
+            const url=`${url}/url_shortener`
             const rawData=await fetch(url,{
                 method:"POST",
                 headers: {

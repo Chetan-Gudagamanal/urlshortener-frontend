@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useHistory } from "react-router-dom"
+import { url } from "../constants"
 
 export default function VerifyEmailPage({useParams,setStatus}){
     const {id,token}=useParams()
@@ -8,7 +9,7 @@ export default function VerifyEmailPage({useParams,setStatus}){
     useEffect(()=>{
         // console.log(data);
         const varifyToken=async()=>{
-            const url=`https://url-shortener-backend-server.herokuapp.com/verify_email/${id}/${token}`
+            const url=`${url}/verify_email/${id}/${token}`
             const rawData=await fetch(url,{
                 method:"POST",
                 headers: {
