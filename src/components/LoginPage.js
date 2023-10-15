@@ -68,7 +68,7 @@ export default function LoginPage({setStatus}) {
         {/* <p>Click on create Account to register as new user</p> */}
         <p><br/><img src={logo} alt="url-shortener" style={{ height: 100, width: auto ,borderRadius:"1em"}}/></p>
         <p className="login_text">LOGIN TO URL SHORTENER APPLICATION</p>
-            <div className="col-xl-10 col-lg-12 col-md-9">
+            <div className="col-xl-7 col-lg-7 col-md-9">
                 <div className="card o-hidden border-0 shadow-lg my-5">
                     
                     <form onSubmit={handleSubmit(onSubmit)} className="MyForm">

@@ -44,7 +44,7 @@ export default function Register({setStatus}) {
                 setLoadingStatus(false)
                 alert("Created successfully, Click on ok to proceed to next step")
                 // setStatus("User created successfully, You can now Login with your credentials")
-                setStatus("We have sent an verification link to your email, kindly verify to continue.(This link will be valid for only 20 minutes, If not found, kindly check in spam folder also) NOTE: At heavy input loads it might take max upto 5 minutes to receive email, we are working on speeding it up")
+                setStatus("We have sent an verification link to your email, kindly verify to continue.(If not found, kindly check in spam folder also)")
                 history.push("/status")
             } else{
                 setLoadingStatus(false)
@@ -58,7 +58,7 @@ export default function Register({setStatus}) {
   return (
     <div className="container">
         <div className="row justify-content-center">
-            <div className="col-xl-10 col-lg-12 col-md-9">
+            <div className="col-xl-7 col-lg-7 col-md-9">
                 <div className="card o-hidden border-0 shadow-lg my-5">
                     <form onSubmit={handleSubmit(onSubmit)} className="MyForm">
                         <br/>

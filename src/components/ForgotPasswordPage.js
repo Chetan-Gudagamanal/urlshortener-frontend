@@ -56,7 +56,7 @@ export default function ForgotPasswordPage({setStatus}) {
   return (
     <div className="container">
         <div className="row justify-content-center">
-            <div className="col-xl-10 col-lg-12 col-md-9">
+            <div className="col-xl-7 col-lg-7 col-md-9">
                 <div className="card o-hidden border-0 shadow-lg my-5">
                     <form onSubmit={handleSubmit(onSubmit)} className="MyForm">
                         <br/>
